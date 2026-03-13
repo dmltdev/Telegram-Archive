@@ -1,6 +1,7 @@
 services:
   telegram-backup:
     image: drumsergio/telegram-archive:latest
+    platform: linux/amd64
     container_name: telegram-backup
     restart: unless-stopped
     command: ["python", "-m", "src", "schedule"]
@@ -113,6 +114,7 @@ services:
 
   telegram-viewer:
     image: drumsergio/telegram-archive-viewer:latest
+    platform: linux/amd64
     container_name: telegram-viewer
     restart: unless-stopped
     ports:

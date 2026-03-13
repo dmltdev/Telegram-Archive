@@ -50,6 +50,9 @@ async def setup_authentication():
         logger.info(f"Session will be saved to: {config.session_path}")
         logger.info("=" * 60)
 
+        # Ensure session directory exists
+        os.makedirs(config.session_dir, exist_ok=True)
+
         # Create Telegram client
         client = TelegramClient(config.session_path, config.api_id, config.api_hash)
 
