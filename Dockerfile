@@ -22,7 +22,7 @@ COPY alembic.ini .
 
 # Create non-root user for security
 RUN useradd -m -u 1000 telegram && \
-    mkdir -p /data/backups && \
+    mkdir -p /data/backups /data/session && \
     chown -R telegram:telegram /app /data && \
     chmod +x /app/scripts/entrypoint.sh
 
